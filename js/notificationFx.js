@@ -144,9 +144,9 @@
     }, 25 );
 		
 		// after animation ends remove ntf from the DOM
-		var onEndAnimationFn = function( ev ) {
+		var onEndAnimationFn = function( ev, immediacy) {
 			if( support.animations ) {
-				if( ev.target !== self.ntf ) return false;
+				// if( ev.target !== self.ntf) return false; // 由于不能去掉元素，取消这句话
 				this.removeEventListener( animEndEventName, onEndAnimationFn );
 			}
 			self.options.wrapper.removeChild( this );

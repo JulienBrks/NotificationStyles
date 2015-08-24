@@ -346,8 +346,8 @@
 }
 
 .ns-effect-thumbslider .ns-close {
-	top: 1.8em;
-	right: 1.8em;
+	top: 62px;
+	right: 22px;
 }
 
 .ns-effect-thumbslider.ns-show .ns-close,
@@ -388,13 +388,15 @@
 
 .ns-effect-thumbslider .ns-box-inner {
 	overflow: hidden;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, .05);
+  display: table;
+  min-width: 150px;
 }
 
 .ns-effect-thumbslider .ns-thumb {
 	position: absolute;
 	z-index: 100;
 	overflow: hidden;
-  background-color: #f00;
 }
 
 .ns-effect-thumbslider .ns-content {
@@ -403,7 +405,8 @@
 	font-weight: bold;
 	padding: 0 40px 0 80px;
 	height: 64px;
-	line-height: 60px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .ns-effect-thumbslider .ns-content p {
@@ -463,8 +466,9 @@
 }
 
 .ns-effect-thumbslider .ns-thumb img {
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
+  margin: 12px;
 }
 
 /* Generated with Bounce.js. Edit at http://goo.gl/6iLZu5 */
