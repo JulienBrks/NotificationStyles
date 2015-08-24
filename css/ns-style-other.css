@@ -17,6 +17,10 @@
 	animation-direction: reverse;
 }
 
+[class*=" ns-effect-"].ns-other.ns-hide-immediately {
+  display: none;
+}
+
 /* Individual Effects */
 
 /* Expand SVG corner */
@@ -390,6 +394,7 @@
 	position: absolute;
 	z-index: 100;
 	overflow: hidden;
+  background-color: #f00;
 }
 
 .ns-effect-thumbslider .ns-content {
@@ -401,6 +406,9 @@
 	line-height: 60px;
 }
 
+.ns-effect-thumbslider .ns-content p {
+  line-height: inherit; 
+}
 .ns-effect-thumbslider.ns-show .ns-content,
 .ns-effect-thumbslider.ns-hide .ns-content {
 	-webkit-animation-name: animSlide;
@@ -452,6 +460,11 @@
 	animation-direction: reverse;
 	-webkit-animation-delay: 0.3s;
 	animation-delay: 0.3s;
+}
+
+.ns-effect-thumbslider .ns-thumb img {
+  width: 64px;
+  height: 64px;
 }
 
 /* Generated with Bounce.js. Edit at http://goo.gl/6iLZu5 */

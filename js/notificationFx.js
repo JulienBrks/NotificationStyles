@@ -127,19 +127,22 @@
 	/**
 	 * dismiss the notification
 	 */
-	NotificationFx.prototype.dismiss = function() {
+	NotificationFx.prototype.dismiss = function(immediacy) {
 		var self = this;
 		this.active = false;
 		clearTimeout( this.dismissttl );
 		classie.remove( this.ntf, 'ns-show' );
-		setTimeout( function() {
-			classie.add( self.ntf, 'ns-hide' );
-			
-			// callback
-			if (typeof self.options.onClose === 'function')
-				self.options.onClose();
-		}, 25 );
-
+    setTimeout( function() {
+      if(immediacy) {
+        classie.add( self.ntf, 'ns-hide-immediately');
+      } else {
+        classie.add( self.ntf, 'ns-hide' );
+      }  
+      // callback
+      if (typeof self.options.onClose === 'function')
+        self.options.onClose();
+    }, 25 );
+		
 		// after animation ends remove ntf from the DOM
 		var onEndAnimationFn = function( ev ) {
 			if( support.animations ) {
